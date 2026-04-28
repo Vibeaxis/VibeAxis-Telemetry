@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+/* WE ADD CSS VARIABLES HERE */
+:root {
+  --primary-color: #0ea5e9;
+  --bg-color: #020617;
+  --text-color: #f8fafc;
+}
+
+.dashboard-container {
+  width: 100vw; /* Changed from hardcoded 1280 to fill whatever the window size is */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  background-size: cover;
+  background-position: center;
+  font-family: 'Orbitron', sans-serif;
+  -webkit-app-region: drag;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Update the ring to use the variable */
+.dial-progress {
+  fill: none;
+  stroke: var(--primary-color);
+  stroke-width: 14;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.3s ease;
+  filter: drop-shadow(0 0 10px var(--primary-color));
+}
+
+.dial-value {
+  position: absolute;
+  top: 110px; 
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  transform: translateY(-50%);
+  display: flex;
+  align-items: baseline;
+}
+
+/* --- FIX 1: Allow the Settings Menu to Scroll --- */
+.settings-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  -webkit-app-region: no-drag; 
+  
+  /* These two lines fix the cut-off uploader! */
+  overflow-y: auto; 
+  justify-content: flex-start;
+}
+
+/* --- FIX 2: Make the Pin Button Clickable Again --- */
+.snap-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  
+  /* THIS LINE IS CRITICAL - Without it, clicks are ignored! */
+  -webkit-app-region: no-drag; 
+  
+  padding: 10px 20px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 50;
+}
+
+.snap-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px var(--primary-color);
+}
+
+.settings-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.settings-section {
+  margin-bottom: 30px;
+}
+
+.settings-section h3 {
+  color: #64748b;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.settings-btn {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: white;
+  font-family: 'Orbitron';
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.settings-btn:hover { background: #334155; }
+
+/* The Row of Dials */
+.telemetry-row {
+  display: flex;
+  gap: 100px;
+  z-index: 1;
+}
+
+/* Individual Dial Pod */
+.dial-pod {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* SVG Circular Graph */
+.svg-dial {
+  width: 220px;
+  height: 220px;
+  transform: rotate(-90deg); /* Starts the circle at the 12 o'clock position */
+}
+
+.dial-bg {
+  fill: none;
+  stroke: #0f172a;
+  stroke-width: 14;
+}
+
+/* The Glowing Progress Bar */
+.dial-progress {
+  fill: none;
+  stroke: #0ea5e9;
+  stroke-width: 14;
+  stroke-linecap: round;
+  /* This smoothly animates the bar when the numbers change! */
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.6));
+}
+
+/* Turns the ring red if temps get too hot */
+.dial-progress.danger {
+  stroke: #ef4444;
+  filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.6));
+}
+
+/* Text Inside the Ring */
+.dial-value {
+  position: absolute;
+  top: 110px; 
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%);
+  display: flex;
+  align-items: baseline;
+}
+
+.dial-unit {
+  font-size: 1.5rem;
+  color: #64748b;
+  margin-left: 5px;
+}
+
+.dial-label {
+  margin-top: 25px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #94a3b8;
+}
