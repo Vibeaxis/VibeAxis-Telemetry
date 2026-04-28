@@ -7,8 +7,9 @@
   <img src="https://img.shields.io/badge/Build-Electron%20%7C%20React-blue" alt="Tech Stack" />
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
   <img src="https://img.shields.io/badge/Status-Beta-orange" alt="Status" />
+  > **[🌐 Get the 1-Click Windows Installer at VibeAxis.com](https://vibeaxis.com)**
 </div>
-> **[🌐 Get the 1-Click Windows Installer at VibeAxis.com](https://vibeaxis.com)**
+
 <br />
 
 ## ⚡ The Bypass: Why We Built This
