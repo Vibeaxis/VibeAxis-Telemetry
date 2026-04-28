@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://via.placeholder.com/1280x400/020617/0ea5e9?text=Insert+Scrap+Syndicate+Screenshot+Here" alt="VibeAxis Telemetry Panel" width="100%" />
+  <img src="https://vibeaxis.com/wp-content/uploads/2026/04/sys_mon.webp" alt="VibeAxis Telemetry Panel" width="100%" />
 
   <h1>VibeAxis Telemetry</h1>
   <p><strong>The zero-friction, borderless hardware monitor for custom PC builds.</strong></p>
