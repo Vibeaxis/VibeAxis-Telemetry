@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
   <img src="https://img.shields.io/badge/Status-Beta-orange" alt="Status" />
 </div>
-
+> **[🌐 Get the 1-Click Windows Installer at VibeAxis.com](https://vibeaxis.com)**
 <br />
 
 ## ⚡ The Bypass: Why We Built This
